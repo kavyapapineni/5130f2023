@@ -1,4 +1,4 @@
 Student Name : Kavya Papineni
 UML Student ID : 02077700
 UML Email ID : Kavya_Papineni@student.uml.edu
-Github Username : kpapinen
+Github Username : kavyapapineni
