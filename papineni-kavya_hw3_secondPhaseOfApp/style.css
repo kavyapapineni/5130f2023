@@ -1,1 +1,362 @@
+/* hero background image */
+.serviceContainer {
+    height:100vh;  
+    background-size:cover;
+    position:relative;
+}
+/* text css above hero image*/
+.hero_title {
+    font-size: 4.5rem;
+}
+.hero_desc {
+    font-size: 2rem;
+}
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
 
+/* spacing on all sections */
+/* #about, #services, #portfolio, #contact {
+    /* margin-top: 4rem;
+    padding-top: 4rem; */
+ */
+
+#contact {
+    padding-bottom: 4rem;
+}
+/* about section image css */
+.imageAboutPage {
+    width: 100%;
+    height: 500px;
+}
+
+/* services section css */
+.servicesText.card {
+    height: 280px;
+    cursor: pointer;
+  }
+.servicesIcon {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+.card-title {
+    text-align: center;
+}
+.card:hover .servicesIcon {
+    color: #008000;
+}
+.servicesText:hover {
+    border: 1px solid #008000;
+}
+
+.custom-height{
+    height: 200px;
+    max-height: 200px;
+    min-height: 200px;
+}
+
+
+.card{
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.21);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.6px);
+-webkit-backdrop-filter: blur(4.6px);
+border: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgb(48, 99, 238) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+.glassmorphism{
+background: rgba(255, 255, 255, 0.21);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.9px);
+-webkit-backdrop-filter: blur(7.9px);
+border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.card{
+    transition: all 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    transition: all 0.3s;
+    -webkit-box-shadow:0px 0px 246px 18px rgba(169,170,194,0.89);
+    -moz-box-shadow: 0px 0px 246px 18px rgba(169,170,194,0.89);
+    box-shadow: 0px 0px 246px 18px rgba(169,170,194,0.89);
+}
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Style table headers */
+th {
+    background-color: #f2f2f2;
+}
+
+/* Style table cells */
+td, th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Style the unordered lists within table cells */
+td ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style list items within the unordered lists */
+td li {
+    margin-bottom: 5px;
+}
+
+/* Add some spacing between rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect on rows */
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Upload Resume */
+.upload-btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    background-color: #4caf50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.upload-btn:hover {
+    background-color: #45a049;
+}
+
+/*investment portfolio  */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2255a482;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+  
+  header {
+      color: #fff;
+  
+      position: absolute;
+      opacity: 60%;
+      font-weight: bolder;
+      width: 100%;
+      margin-left: 15%
+  }
+  
+  .header-title {
+      margin-left: 20%;
+  
+  }
+  a {
+      color: inherit;
+      display: inline-block;
+    }
+  h1 {
+    font-size: 36px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .image-container {
+    text-align: center;
+  }
+  
+  img {
+      max-width: 100%;
+      height: auto;
+      text-align: center;
+      width: 100%;
+  }
+  
+  footer {
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    opacity: 40%;
+  }
+  
+  .shadowed-div {
+      width: 70%;
+      height: 500px;
+      background-color: #ffa60098;
+      margin: 20px auto;
+      padding: 20px;
+      display: flex;
+      box-shadow: 5px 5px 10px #faad14;
+      border-radius: 25px;
+  }
+  
+  .shadowed-div-table {
+      width: 70%;
+      height: 200px;
+      background-color: #ffa60098;
+      margin: 20px auto;
+      padding: 20px;
+      display: flex;
+      box-shadow: 5px 5px 10px #faad14;
+      border-radius: 25px;
+  }
+  
+  
+  .sachin-info {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+  }
+  
+  
+  
+  /* Reset some default styles and set a background color */
+  body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style the main content */
+  
+  
+  /* Style the individual portfolio items */
+  .portfolio-item {
+    background-color: #fff;
+    border: 1px solid #a38f20;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+  }
+  .portfolio-item:hover {
+    background-color: rgb(238, 204, 70);
+  }
+  
+  .portfolio-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .portfolio-item h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .portfolio-item p {
+    font-size: 1rem;
+  }
+  
+  
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
