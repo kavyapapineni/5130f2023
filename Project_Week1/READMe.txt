@@ -11,7 +11,7 @@ https://developer.themoviedb.org/reference/intro/getting-started
 https://tailwindcss.com/docs/guides/create-react-app
 
 
-Team Members -
+Team Members:
 
 Kavya Papineni - Kavya_Papineni@student.uml.edu
 Teja Venkat Annavarapu - TejaVenkat_Annavarapu@student.uml.edu
