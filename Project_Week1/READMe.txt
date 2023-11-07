@@ -21,3 +21,6 @@ Team Members:
 Kavya Papineni - Kavya_Papineni@student.uml.edu
 Teja Venkat Annavarapu - TejaVenkat_Annavarapu@student.uml.edu
 Arun Kumar Coimbatore Dada - arunkumar_coimbatoredada@student.uml.edu
+
+My Accomplishment:
+User-Friendly Interface and Authentication Setup: I have successfully set up Sign Up and Sign In pages using Tailwind and custom CSS, demonstrating my attention to user experience and interface design.
