@@ -6,23 +6,11 @@ During this week our main focus was, on setting up elements of the project. We a
 
 Some key features that were implemented include;
 
-1. Google Firebase Configuration:
+Google Firebase Configuration:
+The team successfully configured Google Firebase for user authentication, implementing robust error handling for credentials, email formats, and password requirements using regular expressions. The setup ensures the verification of user sign-up details and equips the system to detect and manage errors related to login credentials effectively.
 
-We set up authentication using Firebase to verify user sign up credentials. Additionally we incorporated error handling mechanisms to address credentials, email formats and password requirements using regular expressions.
-
-2. Redux Integration:
-
-We successfully integrated Redux for state management. This involved dispatching actions for user login functionality. Configuring a store to handle the overall applications state.
-
-Accomplishments and Details;
-
-Google Firebase Integration:
-
-Our team accomplished the configuration of Google Firebase for managing user authentication and validation. This entailed implementing Firebases authentication services to ensure verification of user sign up details. The system is now equipped to detect and handle errors related to login credentials, email formats and password criteria based on established regex patterns.
-
-Redux Implementation:
-
-By integrating Redux into our project architecture we established a framework, for managing the applications state. This implementation involved configuring a store that centralizes the applications state.Furthermore we utilized Redux to dispatch actions, for user login, which significantly improved the authentication process for users.
+Redux Integration:
+The integration of Redux for state management marked a significant achievement. This involved dispatching actions for user login functionality and configuring a centralized store to handle the overall application state. The implementation of Redux not only established a framework for state management but also significantly improved the user authentication process.
 
 Tasks Planned for Week 3:
 
