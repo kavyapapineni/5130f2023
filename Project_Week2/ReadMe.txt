@@ -1,29 +1,30 @@
-The AI Film Factory; 
+The AI Film Factory:
 
-Summary of Week 2 Progress;
+Summary of Week 2 Progress:
 
-During this week our main focus was, on setting up elements of the project. We achieved milestones in configuring Google Firebase for user authentication and validation. Some key features that were implemented include;
+During this week our main focus was, on setting up elements of the project. We achieved milestones in configuring Google Firebase for user authentication and validation.
+Some key features that were implemented include;
 
-1. Google Firebase Configuration;
+1. Google Firebase Configuration:
 
 We set up authentication using Firebase to verify user sign up credentials. Additionally we incorporated error handling mechanisms to address credentials, email formats and password requirements using regular expressions.
 
-2. Redux Integration;
+2. Redux Integration:
 
 We successfully integrated Redux for state management. This involved dispatching actions for user login functionality. Configuring a store to handle the overall applications state.
 
 Accomplishments and Details;
 
-Google Firebase Integration;
+Google Firebase Integration:
 
 Our team accomplished the configuration of Google Firebase for managing user authentication and validation. This entailed implementing Firebases authentication services to ensure verification of user sign up details. The system is now equipped to detect and handle errors related to login credentials, email formats and password criteria based on established regex patterns.
 
-Redux Implementation;
+Redux Implementation:
 
 By integrating Redux into our project architecture we established a framework, for managing the applications state. This implementation involved configuring a store that centralizes the applications state.
 Furthermore we utilized Redux to dispatch actions, for user login, which significantly improved the authentication process for users.
 
-Tasks Planned for Week 3;
+Tasks Planned for Week 3:
 
 Moving ahead our main priority will be integrating the TMDb (The Movie Database) API. Our goal is to retrieve a collection of movies along with their titles, posters and detailed descriptions. We will then utilize this information to design and showcase movie cards, on the user interface.
 
