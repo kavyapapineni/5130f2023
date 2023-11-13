@@ -7,14 +7,19 @@ During this week our main focus was, on setting up elements of the project. We a
 Some key features that were implemented include;
 
 Google Firebase Configuration:
-The team successfully configured Google Firebase for user authentication, implementing robust error handling for credentials, email formats, and password requirements using regular expressions. The setup ensures the verification of user sign-up details and equips the system to detect and manage errors related to login credentials effectively.
+The team successfully configured Google Firebase for user authentication, implementing robust error handling for credentials, email formats, and password requirements using regular expressions. 
+The setup ensures the verification of user sign-up details and equips the system to detect and manage errors related to login credentials effectively.
 
 Redux Integration:
-The integration of Redux for state management marked a significant achievement. This involved dispatching actions for user login functionality and configuring a centralized store to handle the overall application state. The implementation of Redux not only established a framework for state management but also significantly improved the user authentication process.
+The integration of Redux for state management marked a significant achievement.
+This involved dispatching actions for user login functionality and configuring a centralized store to handle the overall application state.
+The implementation of Redux not only established a framework for state management but also significantly improved the user authentication process.
 
 Tasks Planned for Week 3:
 
-Moving ahead our main priority will be integrating the TMDb (The Movie Database) API. Our goal is to retrieve a collection of movies along with their titles, posters and detailed descriptions. We will then utilize this information to design and showcase movie cards, on the user interface.
+Moving ahead our main priority will be integrating the TMDb (The Movie Database) API.
+Our goal is to retrieve a collection of movies along with their titles, posters and detailed descriptions. 
+We will then utilize this information to design and showcase movie cards, on the user interface.
 
 Difficulties Met:
 
