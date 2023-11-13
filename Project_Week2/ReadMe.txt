@@ -3,6 +3,7 @@ The AI Film Factory:
 Summary of Week 2 Progress:
 
 During this week our main focus was, on setting up elements of the project. We achieved milestones in configuring Google Firebase for user authentication and validation.
+
 Some key features that were implemented include;
 
 1. Google Firebase Configuration:
@@ -21,8 +22,7 @@ Our team accomplished the configuration of Google Firebase for managing user aut
 
 Redux Implementation:
 
-By integrating Redux into our project architecture we established a framework, for managing the applications state. This implementation involved configuring a store that centralizes the applications state.
-Furthermore we utilized Redux to dispatch actions, for user login, which significantly improved the authentication process for users.
+By integrating Redux into our project architecture we established a framework, for managing the applications state. This implementation involved configuring a store that centralizes the applications state.Furthermore we utilized Redux to dispatch actions, for user login, which significantly improved the authentication process for users.
 
 Tasks Planned for Week 3:
 
