@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: inline-block;
+        }
+
+        label, input, button {
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            padding: 8px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        input[type="text"], input[type="password"] {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function validateEmail() {
+            var email = document.getElementById('username').value;
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            return true;
+        }
+
+        function validatePassword() {
+            var password = document.getElementById('password').value;
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                alert('Password must be at least 8 characters long and include uppercase, lowercase, digits, and symbols.');
+                return false;
+            }
+            return true;
+        }
+
+        function validateForm() {
+            return validateEmail() && validatePassword();
+        }
+    </script>
+</head>
+<body>
+    <h2>Sign Up</h2>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li style="color: {% if 'error' in message %}red{% else %}green{% endif %};">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form action="/signup" method="post" onsubmit="return validateForm()">
+        <label for="username">Email:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>
