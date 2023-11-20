@@ -20,7 +20,7 @@ Obtaining Information for Trailer Videos:
 We began implementing the capability to obtain trailer videos for each movie, along with the usual movie data.One way this function improves the user experience is by allowing users to see trailers directly from the app.
 
 Tasks I have DONE:
-Displaying MovieCards with Posters:Displaying MovieCards with posters is a significant visual enhancement. This step not only makes your application more engaging but also provides users with a quick and visually appealing overview of the available movies. The integration of movie posters from the TMDB API adds a professional and aesthetic touch to your application.
+Displaying MovieCards with Posters:Displaying MovieCards with posters is a significant visual enhancement. This step not only makes my application more engaging but also provides users with a quick and visually appealing overview of the available movies. The integration of movie posters from the TMDB API adds a professional and aesthetic touch to my application.
 
 References:
 https://www.themoviedb.org/?language=en-US
