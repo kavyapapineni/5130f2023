@@ -18,7 +18,7 @@ Internationalization Implementation:
 We carefully worked with language experts and linguists to make sure the GPT Search Bar is easy to use and accurately translates languages. We also added a simple language selection feature, so you can easily choose your preferred language.
 
 Tasks I have Accomplished:
-1. I collaborated closely with language experts and linguists to ensure that the GPT Search Bar is user-friendly and provides accurate language translations.
+1. I closely worked with language experts and linguists to ensure that the GPT Search Bar is user-friendly and provides accurate language translations.
 2. I implemented a straightforward language selection feature, allowing you to easily choose your preferred language for a more personalized experience.
 
 References:
