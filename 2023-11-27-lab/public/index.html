@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWA</title>
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="pwa test">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="msapplication-TileImage" content="icon.png">
+  <meta name="msapplication-TileColor" content="#3367D6">
+  <style>
+    .validation-message {
+      color: red;
+      font-weight: bold;
+    }
+    .container {
+      display: inline-block;
+      width: 25%; /* Adjust the width as needed, depending on your design */
+      margin: 10px;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+h1 {
+    color: #4caf50;
+}
+
+#currency-info, #other-info {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+        color: #4caf50;
+    }
+
+    #location-info {
+        font-size: 1.2em;
+        color: #333;
+    }
+  #myForm {
+    max-width: 300px; /* Set your preferred maximum width */
+    margin: 0 auto;   /* Center the form horizontally */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  .validation-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: #45a049;
+  }
+</style>
+
+</head>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+<script type="text/javascript" src="./userinfo.js"></script>
+<script type="text/javascript" src="./location.js"></script>
+
+<body>
+  <form id="myForm">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    <div class="validation-message" id="email-validation"></div>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <div class="validation-message" id="password-validation"></div>
+
+    <input type="submit" value="Submit" onclick="onSubmit()">
+    <input type="reset" value="Reset">
+  </form>
+
+  <div class="container">
+    <h1>User Location</h1>
+    <p id="location-info">Waiting for location...</p>
+    <p id="weather-info">Fetching weather data...</p>
+
+  </div>
+
+  <div class="container">
+    <h1>Previous Visits Tracker</h1>
+    <p id="visit-count">You have visited this site <span id="counter">0</span> times.</p>
+  </div>
+  <div class="container">
+    <h1 id="greeting">Hello!</h1>
+    <p id="currency-info">Currency: $</p>
+    <p id="other-info">Other location-specific facts go here.</p>
+    <div>
+        <label for="language-select">Select Language:</label>
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Check if localStorage is supported
+    if (typeof(Storage) !== 'undefined') {
+        // Get the previous visit count from localStorage
+        let visitCount = localStorage.getItem('visitCount');
+
+        // If it's the first visit, set the count to 1
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            // If it's not the first visit, increment the count
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        // Update the visit count on the page
+        document.getElementById('counter').textContent = visitCount;
+
+        // Save the updated count to localStorage
+        localStorage.setItem('visitCount', visitCount.toString());
+    } else {
+        // If localStorage is not supported, display a message to the user
+        console.error('LocalStorage is not supported. Unable to track visits.');
+    }
+
+  let currentLanguage = "en";
+  let currentCurrency = "$";
+
+  // Initialize the UI with default values
+  updateUI();
+
+  // Handle language selection change
+  const languageSelect = document.getElementById("language-select");
+  languageSelect.addEventListener("change", function () {
+    currentLanguage = languageSelect.value;
+    updateUI();
+  });
+
+  function updateUI() {
+    // Update greeting based on language
+    const greetingElement = document.getElementById("greeting");
+    greetingElement.textContent = getGreeting(currentLanguage);
+
+    // Update currency info based on language
+    const currencyInfoElement = document.getElementById("currency-info");
+    currencyInfoElement.textContent = `Currency: ${getCurrencySymbol(
+      currentLanguage
+    )}`;
+
+    // Update other location-specific facts based on language
+    const otherInfoElement = document.getElementById("other-info");
+    otherInfoElement.textContent = getOtherInfo(currentLanguage);
+  }
+
+  function getGreeting(language) {
+    switch (language) {
+      case "es":
+        return "¡Hola!";
+      case "fr":
+        return "Bonjour!";
+      default:
+        return "Hello!";
+    }
+  }
+
+  function getCurrencySymbol(language) {
+    switch (language) {
+      case "es":
+        return "€";
+      case "fr":
+        return "€";
+      default:
+        return "$";
+    }
+  }
+
+  function getOtherInfo(language) {
+    switch (language) {
+      case "es":
+        return "Otros hechos específicos del lugar van aquí.";
+      case "fr":
+        return "D'autres faits spécifiques à l'emplacement vont ici.";
+      default:
+        return "Other location-specific facts go here.";
+    }
+  }
+
+    
+});
+
+  </script>
+  <script>
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', function (event) {
+      let isValid = true;
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+
+      const emailValidation = document.getElementById('email-validation');
+      const passwordValidation = document.getElementById('password-validation');
+
+      if (!isValidEmail(emailInput.value)) {
+        emailValidation.textContent = 'Invalid email format';
+        isValid = false;
+      } else {
+        emailValidation.textContent = '';
+      }
+
+      if (!isValidpasswordNumber(passwordInput.value)) {
+        passwordValidation.textContent = 'Min 6 Chars Password Allowed';
+        isValid = false;
+      } else {
+        passwordValidation.textContent = '';
+      }
+
+      if (!isValid) {
+        event.preventDefault(); 
+      } else {
+        alert("Thank you " + emailInput.value+ " for Submitting your Details!!!")
+      }
+    });
+
+    function isValidEmail(email) {
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return emailRegex.test(email);
+    }
+
+    function isValidpasswordNumber(password) {
+      const passwordRegex = /^.{6,}$/; 
+      return passwordRegex.test(password);
+    }
+
+  </script>
+  <script>
+    window.addEventListener('load', async () => {
+      if ('serviceWorker' in navigator) {
+        try {
+          const registration = await navigator.serviceWorker.register('/sw.js');
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          const notificationPermission = await Notification.requestPermission();
+          if (notificationPermission !== 'granted') {
+            console.log('Notification permission not granted');
+          } else {
+            const title = 'Test Notification';
+            const options = {
+              body: 'Do you like this ?',
+              icon: 'icon.png',
+              vibrate: [200, 100, 200, 100, 200, 100, 400],
+              tag: 'request',
+              actions: [
+                { action: 'yes', title: 'Yes', icon: 'icon.png' },
+                { action: 'no', title: 'No', icon: 'icon.png' }
+              ]
+            };
+            const res = await registration.showNotification(title, options);
+            console.log(res);
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
