@@ -8,4 +8,4 @@ Steps to run PWA App:
 
 # It listens port 7777 to login and view : https://localhost:7777/
 
-# Output Screenshot Attached
+# Output Screenshots Attached
