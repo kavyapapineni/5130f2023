@@ -1,4 +1,4 @@
-Comparative Analysis of Online Recommender Systems and Friends' Recommendations
+Comparative Analysis of Online Recommender Systems and Friends Recommendations
 
 ABSTRACT:
 The study by Kirsten Swearingen and Rashmi Sinha examines how well six online recommender systems (RS) perform by contrasting user recommendations with those of their friends. Three book RS (Amazon.com, RatingZone, Sleeper) and three movie RS (Amazon.com, MovieCritic, Reel.com) are the subject of the study. The study indicates users' willingness to engage with RS for its utility, even though friends consistently outperform RS in providing recommendations, especially on "new" and "unexpected" items. Metrics like "Trust-Generating Recommendations" and "Useful Recommendations," which highlight users' confidence in recommendations made by systems that they have previously liked, are part of the analysis.
