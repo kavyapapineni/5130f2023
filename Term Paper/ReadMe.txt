@@ -32,4 +32,3 @@ REFERENCES:
 •	Ken Goldberg, Theresa Roeder, Dhruv Gupta, and Chris Perkins, "Eigentaste: A Constant-Time Collaborative Filtering Algorithm," Information Retrieval, accepted January 2001.  
 •	P. Resnick and H.R. Varian, "Recommender systems." Communications of the ACM, 1997. 40(3) 56-58  
 •	J. Ben Schafer, Joseph Konstan, and John Riedl. "Recommender Systems in E-Commerce." ACM 
-Conference on Electronic Commerce 1999. http://www.cs.umn.edu/Research/GroupLens/ec-99.pdf
